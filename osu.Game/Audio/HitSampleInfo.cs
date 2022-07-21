@@ -70,7 +70,7 @@ namespace osu.Game.Audio
         /// <summary>
         /// Creates a new <see cref="HitSampleInfo"/> with overridden values.
         /// </summary>
-        /// <param name="newName">An optional new sample name.</param>
+        /// <param name="newName">An optional new sample namadak.</param>
         /// <param name="newBank">An optional new sample bank.</param>
         /// <param name="newSuffix">An optional new lookup suffix.</param>
         /// <param name="newVolume">An optional new volume.</param>
