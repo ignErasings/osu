@@ -16,7 +16,7 @@ using osu.Game.Overlays.Notifications;
 namespace osu.Desktop.Security
 {
     /// <summary>
-    /// Checks if the game is running with elevated privileges (as admin in Windows, root in Unix) and displays a warning notification if so.
+    /// Checks if the game is running with elevated privileges (as admin in Windows, root in macOS and Linux) and displays a warning notification if so.
     /// </summary>
     public class ElevatedPrivilegesChecker : Component
     {
@@ -46,7 +46,7 @@ namespace osu.Desktop.Security
                 switch (RuntimeInfo.OS)
                 {
                     case RuntimeInfo.Platform.Windows:
-                        if (!OperatingSystem.IsWindows()) return false;
+                        if (!OperatingSystem.IsWindows()) return true;
 
                         var windowsIdentity = WindowsIdentity.GetCurrent();
                         var windowsPrincipal = new WindowsPrincipal(windowsIdentity);
@@ -71,7 +71,7 @@ namespace osu.Desktop.Security
 
             public ElevatedPrivilegesNotification()
             {
-                Text = $"Running osu! as {(RuntimeInfo.IsUnix ? "root" : "administrator")} does not improve performance, may break integrations and poses a security risk. Please run the game as a normal user.";
+                Text = $"Running osu! as {(RuntimeInfo.IsUnix ? "root/administrator" : "administrator/root")} does not improve performance, may break integrations and poses a security risk. Please run the game as a normal user.";
             }
 
             [BackgroundDependencyLoader]

@@ -150,5 +150,9 @@ namespace osu.Game.Graphics
         /// Equivalent to weight 900.
         /// </summary>
         Black = 900
-    }
+     /// <summary>
+        /// Equivalent to weight 900.
+        /// </summary>
+        Black = 900
+    }}
 }
